@@ -1,0 +1,70 @@
+class Vehicle:
+    def __init__(self, name, mileage):
+        self.name = name
+        self.mileage = mileage
+
+    def get_vehicle_type(self):
+        if self.wheel_count == 2:
+            return "мотоцикл"
+        elif self.wheel_count == 3:
+            return "трицикл"
+        elif self.wheel_count == 4:
+            return "автомобиль"
+        else:
+            return "я не знаю таких ТС"
+
+    def get_vehicle_advice(self):
+        if self.mileage < 50000:
+            return f"Неплохо ({self.name}) можно брать."
+        elif 50001 <= self.mileage <= 100000:
+            return f"({self.name}) надо внимательно проверить."
+        elif 100001 <= self.mileage <= 150000:
+            return f"({self.name}) надо провести полную диагностику."
+        else:
+            return f"({self.name}) лучше не покупать."
+
+
+vehicle1 = Vehicle("BMW", 30000)
+vehicle1.wheel_count = 2
+
+vehicle2 = Vehicle("Audi", 80000)
+vehicle2.wheel_count = 4
+
+vehicle3 = Vehicle("Honda", 120000)
+vehicle3.wheel_count = 3
+
+vehicle4 = Vehicle("Toyota", 160000)
+vehicle4.wheel_count = 4
+
+for vehicle in [vehicle1, vehicle2, vehicle3, vehicle4]:
+    print(f"Тип ТС: Это {vehicle.get_vehicle_type()} марки {vehicle.name}.")
+    print(f"Совет по приобретению: {vehicle.get_vehicle_advice()}\n")
+
+#########################################
+class Cat:
+    def __init__(self, name, age, breed):
+        self.name = name
+        self.age = age
+        self.breed = breed
+
+    def meow(self):
+        return f"{self.name} говорит: Мяу!"
+
+    def sleep(self):
+        return f"{self.name} спит."
+
+    def eat(self, food):
+        return f"{self.name} ест {food}."
+
+    def play(self):
+        return f"{self.name} играет."
+
+cat1 = Cat("Мурзик", 3, "Сиамский")
+cat2 = Cat("Барсик", 5, "Мейн-кун")
+
+for cat in [cat1, cat2]:
+    print(cat.meow())
+    print(cat.sleep())
+    print(cat.eat("рыбу"))
+    print(cat.play())
+    print()
